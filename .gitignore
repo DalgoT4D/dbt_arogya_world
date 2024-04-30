@@ -1,0 +1,8 @@
+target/
+dbt_packages/
+logs/
+venv/
+profiles/
+profiles.yml
+.user.yml
+.vscode
