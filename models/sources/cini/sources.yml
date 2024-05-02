@@ -1,0 +1,11 @@
+sources:
+    - name: cini
+      description: Contains the data of pre and post survey for partner cini. Also contains the survey dictionary to decode the data
+      schema: cini
+      tables:
+          - name: pre_post_answers
+            identifier: CINI_ShortV2_Yr1_2022
+            description: Survey responses
+          - name: survey_dictionary
+            identifier: survey_dictionary
+            description: Survey dictionary
