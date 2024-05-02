@@ -7,7 +7,8 @@ WITH rows_with_survey_id AS (
 
     SELECT
         ROW_NUMBER() over (
-            PARTITION BY "Survey_Type"
+            PARTITION BY "partner",
+            "Survey_Type"
             ORDER BY
                 (
                     SELECT
@@ -15,12 +16,12 @@ WITH rows_with_survey_id AS (
                 )
         ) AS survey_id,
         "Survey_Type" AS survey_type,
-        "Timestamp" AS "timestamp",*
+        TO_DATE(
+            "Timestamp",
+            'DD-MM-YYYY'
+        ) AS "timestamp",*
     FROM
-        {{ source(
-            'cini',
-            'pre_post_answers'
-        ) }}
+        {{ ref('merged_data') }}
 )
 SELECT
     *
