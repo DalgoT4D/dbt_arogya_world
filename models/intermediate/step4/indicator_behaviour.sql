@@ -45,6 +45,47 @@ FROM
 GROUP BY
     partner,
     survey_type
+UNION ALL
+SELECT
+    partner,
+    survey_type,
+    COUNT(
+        DISTINCT survey_id
+    ) AS total_count,
+    COUNT(
+        DISTINCT CASE
+            WHEN "value" = 'Daily'
+            AND question_code = '4.2' THEN survey_id
+        END
+    ) AS "count",
+    'Daily intake of vegetables' AS "indicator"
+FROM
+    {{ ref("unpivot_flatten") }}
+GROUP BY
+    partner,
+    survey_type
+UNION ALL
+SELECT
+    partner,
+    survey_type,
+    COUNT(
+        DISTINCT survey_id
+    ) AS total_count,
+    COUNT(
+        DISTINCT CASE
+            WHEN "value" IN (
+                'Play games in the playground',
+                'Play a little bit/walk with friends'
+            )
+            AND question_code = '7' THEN survey_id
+        END
+    ) AS "count",
+    'Physical activity in games period' AS "indicator"
+FROM
+    {{ ref("unpivot_flatten") }}
+GROUP BY
+    partner,
+    survey_type
 ORDER BY
     partner,
     survey_type

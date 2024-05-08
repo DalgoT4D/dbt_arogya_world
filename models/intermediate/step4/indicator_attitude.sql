@@ -24,7 +24,7 @@ SELECT
             AND question_code = '5' THEN survey_id
         END
     ) AS "count",
-    'Preference for breakfast options' AS "indicator"
+    'Preference for healthy breakfast options' AS "indicator"
 FROM
     {{ ref("unpivot_flatten") }}
 GROUP BY
@@ -42,12 +42,12 @@ SELECT
             WHEN "value" IN (
                 'Poha',
                 'Whole fruits',
-                'Packaged Juices '
+                'Packaged Juices'
             )
             AND question_code = '6' THEN survey_id
         END
     ) AS "count",
-    'Preference for snacks options' AS "indicator"
+    'Preference for healthy snacks options' AS "indicator"
 FROM
     {{ ref("unpivot_flatten") }}
 GROUP BY
