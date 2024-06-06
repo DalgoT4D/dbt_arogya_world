@@ -1,0 +1,14 @@
+sources:
+    - name: uncleaned
+      description: Contains the data of pre and post survey for partner cini. Also contains the survey dictionary to decode the data
+      schema: staging_unclean
+      tables:
+          - name: post_survey
+            identifier: coded_post_survey_raw
+            description: Post survey responses
+          - name: pre_survey
+            identifier: coded_pre_survey_raw
+            description: Pre survey responses
+          - name: dictionary
+            identifier: survey_dictionary_coded
+            description: Has the mapping of codes to their respective questions/options

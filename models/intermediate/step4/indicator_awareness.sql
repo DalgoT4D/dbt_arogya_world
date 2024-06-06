@@ -1,6 +1,5 @@
 {{ config(
     materialized = "table",
-    schema = "intermediate",
 ) }}
 -- 1. Indicator: Noodles, Chips, Chocolate and Samosa are unhealthy
 --    Question codes - 1.1 , 1.2, 1.5, 1.6

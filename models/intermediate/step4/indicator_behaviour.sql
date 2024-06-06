@@ -1,6 +1,5 @@
 {{ config(
     materialized = "table",
-    schema = "intermediate",
 ) }}
 -- 1. Indicator: Daily intake of breakfast
 --    Question codes - 3

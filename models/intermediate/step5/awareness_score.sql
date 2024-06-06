@@ -1,6 +1,5 @@
 {{ config(
     materialized = "table",
-    schema = "intermediate",
 ) }}
 -- Compute score for each awareness indicator
 -- 1. Indicator: Noodles, Chips, Chocolate and Samosa are unhealthy

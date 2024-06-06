@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: merged_codes
+    columns:
+      - name: "1"
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "SUBSTRING(\"1\" FROM '^[0-9]{1,2}\\.[0-9a-zA-Z]+\\.') IS NOT NULL"

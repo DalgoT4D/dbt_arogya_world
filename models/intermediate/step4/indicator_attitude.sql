@@ -1,6 +1,5 @@
 {{ config(
     materialized = "table",
-    schema = "intermediate",
 ) }}
 -- 1. Indicator: Preference for breakfast options
 --    Question codes - 5, healthy ones ('Upma','Boiled Potato Chat','Vegetable Parantha')

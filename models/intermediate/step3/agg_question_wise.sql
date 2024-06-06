@@ -1,6 +1,5 @@
 {{ config(
     materialized = "table",
-    schema = "intermediate",
 ) }}
 -- Figure out the count of each option in the question
 WITH agg_question_wise AS (

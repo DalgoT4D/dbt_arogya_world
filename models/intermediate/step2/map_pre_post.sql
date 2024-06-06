@@ -1,6 +1,5 @@
 {{ config(
     materialized = "table",
-    schema = "intermediate",
 ) }}
 -- For each survey_id you will find a corresponding pre and post responses
 WITH rows_with_survey_id AS (
